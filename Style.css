@@ -1,0 +1,23 @@
+
+header{
+    background-color: #327dc9;
+    width: auto;
+    height: 100px;
+    justify-items: center;
+    display: flex;
+    color: turquoise;
+}
+.titulo-Principal{
+    font-size: 2.5rem;
+    color: #991212;
+    font-size: 30px;
+    padding: 10px;
+    margin: 0;
+    width: 500px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
