@@ -29,3 +29,60 @@ header{
     align-items: center;
 }
 
+main{
+    background-color: #f2efce;
+    padding: 30px;
+    height: 535px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-1{
+    background-color: #f2efce;
+    padding: 10px;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.crear-article{
+    background-color: #2a3138;
+    width: 380px;
+    height: 230px;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+}
+.crear-article:hover{
+    background-color: #532728;
+    cursor: pointer;
+    transform: scale(1.04);
+}
+.crear-article h2{
+    padding: 10px;
+    color: #dfdada;
+    font-size: 40px;
+    text-align: left;
+    flex: 1;
+    text-align: center;
+    z-index: 1;
+}
+
+.imagen-article{
+    position: absolute;
+    width: 380px;
+    height: 230px;
+    object-fit: cover;   
+    z-index: 0;        
+    opacity: 0.3;  
+    border-radius: 10px;    
+
+}
