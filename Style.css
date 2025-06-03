@@ -6,28 +6,39 @@
     ##532728 ---concho de vino
 
 */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fuente Lovan */
+@font-face {
+    font-family: 'Lovan';
+    src: url('./Fuentes/Lovan.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header{
     background-color: #327dc9;
     background-color: #d6bf93;
-    width: auto;
-    height: 100px;
-    justify-items: center;
-    display: flex;
-    color: turquoise;
-}
-.titulo-Principal{
-    font-size: 2.5rem;
-    color: #991212;
-    font-size: 30px;
-    padding: 10px;
-    margin: 0;
-    width: 500px;
     height: 50px;
     display: flex;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
 
 main{
     background-color: #f2efce;
@@ -85,4 +96,49 @@ main{
     opacity: 0.3;  
     border-radius: 10px;    
 
+}
+
+.titulo-Principal{
+    font-family: 'Lovan', sans-serif;
+    font-size: 2.5rem;
+    color: #000000;
+    font-size: 31px;
+    width: fit-content;
+    justify-content: center;
+    margin-left: 25px;
+}
+
+header a{
+    text-decoration: none;
+}
+
+.nav-link{
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin-right: 25px;
+}
+
+.nav-link:hover{
+    color: #680507;
+
+}
+main {
+    flex: 1; /* Empuja el footer hacia abajo */
+}
+
+footer{
+    background-color: #d6bf93;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+}
+.footer-text{
+    font-family: 'Lovan', sans-serif;
+    font-size: 1.2rem;
+    color: #000000;
+    font-weight: 500;
 }
