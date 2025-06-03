@@ -41,6 +41,7 @@ header{
 
 
 main{
+    flex: 1; /* Empuja el footer hacia abajo */
     background-color: #f2efce;
     padding: 30px;
     height: 535px;
@@ -124,9 +125,7 @@ header a{
     color: #680507;
 
 }
-main {
-    flex: 1; /* Empuja el footer hacia abajo */
-}
+
 
 footer{
     background-color: #d6bf93;
