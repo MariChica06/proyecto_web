@@ -28,9 +28,8 @@ body {
 }
 
 header{
-    background-color: #327dc9;
-    background-color: #d6bf93;
-    height: 50px;
+    background-color: #2a3138;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,6 +42,7 @@ header{
 main{
     flex: 1; /* Empuja el footer hacia abajo */
     background-color: #f2efce;
+    background-color: #c2cdd8;
     padding: 30px;
     height: 535px;
     display: flex;
@@ -51,7 +51,7 @@ main{
 }
 
 .section-1{
-    background-color: #f2efce;
+    background-color: #c2cdd8;
     padding: 10px;
     width: 800px;
     height: 500px;
@@ -74,9 +74,10 @@ main{
     position: relative;
 }
 .crear-article:hover{
-    background-color: #532728;
+    background-color: #27303a;
     cursor: pointer;
     transform: scale(1.04);
+    transition: 0.8s;
 }
 .crear-article h2{
     padding: 10px;
@@ -87,7 +88,10 @@ main{
     text-align: center;
     z-index: 1;
 }
-
+.crear-article h2:hover{
+    color: #ffffff;
+    transition: 0.8s;
+}
 .imagen-article{
     position: absolute;
     width: 380px;
@@ -101,9 +105,9 @@ main{
 
 .titulo-Principal{
     font-family: 'Lovan', sans-serif;
-    font-size: 2.5rem;
-    color: #000000;
-    font-size: 31px;
+    padding-left: 30px;
+    color: #ffffff;
+    font-size: 45px;
     width: fit-content;
     justify-content: center;
     margin-left: 25px;
@@ -114,30 +118,34 @@ header a{
 }
 
 .nav-link{
-    color: #000000;
-    font-size: 1.2rem;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 25px;
     font-weight: 500;
     transition: color 0.3s ease;
     margin-right: 25px;
+    border-radius: 15px 5px;
 }
 
 .nav-link:hover{
-    color: #680507;
+    background-color: #343d46;
+    color: #c2cdd8;
+    transition: 0.8s;
 
 }
 
 
 footer{
-    background-color: #d6bf93;
+    background-color: #2a3138;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
     width: 100%;
 }
-.footer-text{
+.footer-texto{
     font-family: 'Lovan', sans-serif;
     font-size: 1.2rem;
-    color: #000000;
+    color: #ffffff;
     font-weight: 500;
 }
