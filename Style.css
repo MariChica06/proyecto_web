@@ -41,7 +41,6 @@ header{
 
 main{
     flex: 1; /* Empuja el footer hacia abajo */
-    background-color: #f2efce;
     background-color: #c2cdd8;
     padding: 30px;
     height: 535px;
@@ -72,6 +71,7 @@ main{
     align-items: center;
     border-radius: 10px;
     position: relative;
+    text-decoration: none;  
 }
 .crear-article:hover{
     background-color: #27303a;
@@ -87,6 +87,7 @@ main{
     flex: 1;
     text-align: center;
     z-index: 1;
+    
 }
 .crear-article h2:hover{
     color: #ffffff;
@@ -113,18 +114,29 @@ main{
     margin-left: 25px;
 }
 
-header a{
-    text-decoration: none;
+
+header nav{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    gap: 5px;
 }
 
+header nav span{
+    width: 2px;
+    height: 20px;
+    background-color: #ffffff;
+    display: inline-block;
+}
 .nav-link{
+    text-decoration: none;
     color: #ffffff;
     padding: 10px;
     font-size: 25px;
     font-weight: 500;
     transition: color 0.3s ease;
-    margin-right: 25px;
     border-radius: 15px 5px;
+    
 }
 
 .nav-link:hover{
