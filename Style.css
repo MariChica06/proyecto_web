@@ -298,14 +298,11 @@ footer{
     padding: 0;
 }
 
-<<<<<<< HEAD
+
 /*calculadora Va el estilo de la calculadora*/
 
 
-/*  */
-=======
 /*tabla de multiplicar*/
-
 .container {
     background-color: #ffffff;
     padding: 2rem;
@@ -387,4 +384,53 @@ button {
     border-bottom: 1px dashed #ddd;
     color: #2c3136;
 }
->>>>>>> 801a2f0adcb278ce6c0c99a5ac58b76d265126d7
+
+/* Estilos para bout us */
+
+.perfil {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.perfil:hover {
+    transform: translateY(-5px);
+}
+
+.perfil h2 {
+    color: #6c63ff;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.perfil p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.redes a img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 50%;
+    padding: 0.2rem;
+    background-color: #f0f0f0;
+}
+
+.redes a:hover img {
+    transform: scale(1.15);
+    opacity: 0.85;
+    background-color: #ece9ff;
+}
