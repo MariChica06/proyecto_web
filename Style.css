@@ -175,14 +175,15 @@ footer{
     width: 600px;
     flex-wrap: wrap;
     overflow-x: auto;
+    min-height: 400px;
 }
 
 .crear-lista h2{
     color: rgb(87, 50, 75);
-    font-size: 30px;
+    font-size: 25px;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
 }
 
@@ -191,6 +192,11 @@ footer{
     font-family: 'Times New Roman', Times, serif;
 }
 
+.titulo-lista{ 
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 #nombreInput{
     padding: 10px;
     width: 200px;
@@ -215,27 +221,43 @@ footer{
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.5s;
+    font-size: 15px;
 }
 
 #agregarBtn:hover{
-    background-color: rgb(214, 181, 204);
+    background-color: rgb(212, 197, 208);
 }
 
 #listaNombres {
-    padding: 10px;
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto;
     margin: 0;
+    padding: 10px;
 }
 
 #listaNombres li {
     background-color: #fbe4e4;
-    width: auto;
+    width: 100%;
     height: auto;
-    padding: 15px;
+    /* padding: 15px; */
     display: flex;
     justify-content: space-between;
     gap: 20px;
     align-items: center;
     font-family: sans-serif;
+    /* Estilos para los elementos de la lista */
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    padding-left: 25px;
+    border-radius: 5px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* font-size: 20px; */
+    margin-left: auto;
+    margin-right: auto;
 }
 .acciones {
     display: flex;
@@ -249,7 +271,7 @@ footer{
     padding: 6px 10px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     transition: background-color 0.5s;
 }
 
@@ -271,78 +293,9 @@ footer{
 .editar:hover {
     background-color: #4b3d6b;
 }
-
-/*calculadora*/
-
-.calculator {
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 30px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        width: 300px;
-        text-align: center;
-    }
-
-.calculator h1 {
-    color: #ff6f61;
-    font-size: 28px;
-    margin-bottom: 20px;
+.mensaje{
+    margin: 0;
+    padding: 0;
 }
 
-#display {
-    width: 100%;
-    height: 60px;
-    font-size: 24px;
-    text-align: right;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    background-color: #f0f0f0;
-    margin-bottom: 15px;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-button {
-    padding: 20px;
-    font-size: 20px;
-    border: none;
-    border-radius: 15px;
-    background-color: #ffcc70;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-button:hover {
-    background-color: #ffd88c;
-}
-
-.operator {
-    background-color: #90caf9;
-}
-
-.operator:hover {
-    background-color: #a6d4fa;
-}
-
-.equal {
-    background-color: #81c784;
-    grid-column: span 2;
-}
-
-.equal:hover {
-    background-color: #a5d6a7;
-}
-
-.clear {
-    background-color: #ef9a9a;
-    grid-column: span 2;
-}
-
-.clear:hover {
-    background-color: #f48fb1;
-}
+/*calculadora Va el estilo de la calculadora*/

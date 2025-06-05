@@ -17,10 +17,19 @@
         </nav>
     </header>
     <main>
+        <div class="container">
+            <h2>Tabla de Multiplicar</h2>
+            <label for="numero">Número:</label>
+            <input type="number" id="numero" placeholder="Escribe un número">
+            <button id="generateBtn" onclick="generarTabla()">Generar Tabla</button>
+            <button id="clearBtn" onclick="limpiar()">Limpiar</button>
 
+            <div id="result"></div>
+        </div>
     </main>
     <footer>
         <p class="footer-texto">© 2025 Paulina & Antonio. Todos los derechos reservados.</p>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
