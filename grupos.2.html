@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos</title>
+    <link rel="stylesheet" href="./Style.css">
+    <link rel="website icon" type="png" href="./imagenes/Individual.png">
+    <style>
+    main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main h1, main h2 {
+  color: #333;
+  text-align: center;
+}
+
+main input[type="text"],
+main input[type="number"] {
+  width: calc(100% - 120px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+main button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+main button:hover {
+  background-color: #0056b3;
+}
+
+main .nombre-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f3f3;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+main .nombre-item button {
+  background-color: #dc3545;
+}
+
+main .nombre-item button:hover {
+  background-color: #b02a37;
+}
+
+main .grupo {
+  background-color: #e6f4ff;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1 class="titulo-Principal">Paulina & Antonio</h1>
+        <nav>
+            <a href="./index.html" class="nav-link">Home</a>
+            <span></span>
+            <a href="./index.html" class="nav-link">About Us</a>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor">
+        <h1>Generador de Grupos Aleatorios</h1>
+
+        <input type="text" id="nombreInput" placeholder="Escribe un nombre" />
+        <button id="agregarBtn">Agregar</button>
+        <div id="nombresLista"></div>
+
+        <input type="number" id="tamanoGrupo" placeholder="Tamaño de grupo" min="1" />
+        <button id="generarGruposBtn">Generar Grupos</button>
+        <button id="limpiarTodoBtn">Limpiar Todo</button>
+
+        <h2>Grupos:</h2>
+        <div id="gruposResultado"></div>
+    </div>
+    </main>
+    <script>
+    const nombreInput = document.getElementById('nombreInput');
+    const agregarBtn = document.getElementById('agregarBtn');
+    const nombresLista = document.getElementById('nombresLista');
+    const tamanoGrupo = document.getElementById('tamanoGrupo');
+    const generarGruposBtn = document.getElementById('generarGruposBtn');
+    const gruposResultado = document.getElementById('gruposResultado');
+    const limpiarTodoBtn = document.getElementById('limpiarTodoBtn');
+
+    let nombres = [];
+
+    function actualizarListaNombres() {
+        nombresLista.innerHTML = '';
+        nombres.forEach((nombre, index) => {
+        const div = document.createElement('div');
+        div.className = 'nombre-item';
+        div.innerHTML = `
+            <span>${nombre}</span>
+            <button onclick="eliminarNombre(${index})">Eliminar</button>
+        `;
+        nombresLista.appendChild(div);
+    });
+    }
+
+    function eliminarNombre(index) {
+        nombres.splice(index, 1);
+        actualizarListaNombres();
+    }
+
+    agregarBtn.addEventListener('click', () => {
+        const nombre = nombreInput.value.trim();
+        if (nombre) {
+        nombres.push(nombre);
+        nombreInput.value = '';
+        actualizarListaNombres();
+    }
+    });
+
+    generarGruposBtn.addEventListener('click', () => {
+        const tamano = parseInt(tamanoGrupo.value);
+        if (!tamano || tamano <= 0) {
+        gruposResultado.innerHTML = '<p style="color:red;">Ingresa un tamaño de grupo válido.</p>';
+        return;
+    }
+
+        if (nombres.length < tamano) {
+            gruposResultado.innerHTML = '<p style="color:red;">No hay suficientes nombres para formar un grupo.</p>';
+            return;
+    }
+
+        const mezclados = [...nombres].sort(() => Math.random() - 0.5);
+        const grupos = [];
+        for (let i = 0; i < mezclados.length; i += tamano) {
+        grupos.push(mezclados.slice(i, i + tamano));
+    }
+
+    mostrarGrupos(grupos);
+    });
+
+    function mostrarGrupos(grupos) {
+        gruposResultado.innerHTML = '';
+        grupos.forEach((grupo, idx) => {
+        const div = document.createElement('div');
+        div.className = 'grupo';
+        div.innerHTML = `<strong>Grupo ${idx + 1}:</strong><br>${grupo.join(', ')}`;
+        gruposResultado.appendChild(div);
+    });
+    }
+
+    limpiarTodoBtn.addEventListener('click', () => {
+        nombres = [];
+        nombreInput.value = '';
+        tamanoGrupo.value = '';
+        nombresLista.innerHTML = '';
+        gruposResultado.innerHTML = '';
+    });
+</script>
+    <footer>
+        <p class="footer-texto">© 2025 Paulina & Antonio. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
