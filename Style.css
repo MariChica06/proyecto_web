@@ -298,7 +298,93 @@ footer{
     padding: 0;
 }
 
+<<<<<<< HEAD
 /*calculadora Va el estilo de la calculadora*/
 
 
 /*  */
+=======
+/*tabla de multiplicar*/
+
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.container h2 {
+    margin-bottom: 1rem;
+    color: #6c63ff;
+    font-size: 1.6rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+button {
+    padding: 0.6rem 1.2rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#generateBtn {
+    background-color: #6c63ff;
+    color: white;
+}
+
+#generateBtn:hover {
+    background-color: #574ee2;
+}
+
+#clearBtn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#clearBtn:hover {
+    background-color: #ccc;
+}
+
+#result {
+    margin-top: 1.5rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #574ee2;
+    letter-spacing: 3px;
+}
+
+#result p {
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #ddd;
+    color: #2c3136;
+}
+>>>>>>> 801a2f0adcb278ce6c0c99a5ac58b76d265126d7
