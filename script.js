@@ -7,71 +7,73 @@ const mensaje = document.getElementById("mensaje");
 let nombres = [];
 
 // --- Agregar nombre ---
-agregarBtn.addEventListener("click", () => {
-    const nombre = nombreInput.value.trim();
+if (agregarBtn && nombreInput && listaNombres) {
+    agregarBtn.addEventListener("click", () => {
+        const nombre = nombreInput.value.trim();
 
-    if (nombre === "") {
-        if (mensaje) mensaje.textContent = " ¡Por favor, escribe un nombre! ";
-        return;
-    }
-    if (mensaje) mensaje.textContent = "";
+        if (nombre === "") {
+            if (mensaje) mensaje.textContent = " ¡Por favor, escribe un nombre! ";
+            return;
+        }
+        if (mensaje) mensaje.textContent = "";
 
-    nombres.push(nombre);
-    mostrarNombres();
-    nombreInput.value = "";
-    nombreInput.focus();
-});
+        nombres.push(nombre);
+        mostrarNombres();
+        nombreInput.value = "";
+        nombreInput.focus();
+    });
 
-// --- Mostrar nombres en la lista ---
-function mostrarNombres() {
-    listaNombres.innerHTML = '';
-    nombres.forEach((nombre, idx) => {
-        const li = document.createElement("li");
+    // --- Mostrar nombres en la lista ---
+    function mostrarNombres() {
+        listaNombres.innerHTML = '';
+        nombres.forEach((nombre, idx) => {
+            const li = document.createElement("li");
 
-        // Crear <span> con el nombre
-        const spanNombre = document.createElement("span");
-        spanNombre.textContent = nombre;
+            // Crear <span> con el nombre
+            const spanNombre = document.createElement("span");
+            spanNombre.textContent = nombre;
 
-        // Crear contenedor para los botones
-        const acciones = document.createElement("div");
-        acciones.classList.add("acciones");
+            // Crear contenedor para los botones
+            const acciones = document.createElement("div");
+            acciones.classList.add("acciones");
 
-        // Botón Eliminar
-        const eliminarBtn = document.createElement("button");
-        eliminarBtn.textContent = "Eliminar";
-        eliminarBtn.classList.add("eliminar");
-        eliminarBtn.addEventListener("click", () => {
-            nombres.splice(idx, 1);
-            mostrarNombres();
-            if (mensaje) {
-                mensaje.textContent = `${spanNombre.textContent} ha sido eliminado.`;
-                setTimeout(() => mensaje.textContent = "", 2000);
-            }
-        });
-
-        // Botón Editar
-        const editarBtn = document.createElement("button");
-        editarBtn.textContent = "Editar";
-        editarBtn.classList.add("editar");
-        editarBtn.addEventListener("click", () => {
-            const nuevoNombre = prompt("Nuevo nombre:", spanNombre.textContent);
-            if (nuevoNombre !== null && nuevoNombre.trim() !== "") {
+            // Botón Eliminar
+            const eliminarBtn = document.createElement("button");
+            eliminarBtn.textContent = "Eliminar";
+            eliminarBtn.classList.add("eliminar");
+            eliminarBtn.addEventListener("click", () => {
+                nombres.splice(idx, 1);
+                mostrarNombres();
                 if (mensaje) {
-                    mensaje.textContent = `${spanNombre.textContent} ha sido cambiado a: " ${nuevoNombre.trim()} ".`;
+                    mensaje.textContent = `${spanNombre.textContent} ha sido eliminado.`;
                     setTimeout(() => mensaje.textContent = "", 2000);
                 }
-                nombres[idx] = nuevoNombre.trim();
-                mostrarNombres();
-            }
+            });
+
+            // Botón Editar
+            const editarBtn = document.createElement("button");
+            editarBtn.textContent = "Editar";
+            editarBtn.classList.add("editar");
+            editarBtn.addEventListener("click", () => {
+                const nuevoNombre = prompt("Nuevo nombre:", spanNombre.textContent);
+                if (nuevoNombre !== null && nuevoNombre.trim() !== "") {
+                    if (mensaje) {
+                        mensaje.textContent = `${spanNombre.textContent} ha sido cambiado a: " ${nuevoNombre.trim()} ".`;
+                        setTimeout(() => mensaje.textContent = "", 2000);
+                    }
+                    nombres[idx] = nuevoNombre.trim();
+                    mostrarNombres();
+                }
+            });
+
+            acciones.appendChild(eliminarBtn);
+            acciones.appendChild(editarBtn);
+
+            li.appendChild(spanNombre);
+            li.appendChild(acciones);
+            listaNombres.appendChild(li);
         });
-
-        acciones.appendChild(eliminarBtn);
-        acciones.appendChild(editarBtn);
-
-        li.appendChild(spanNombre);
-        li.appendChild(acciones);
-        listaNombres.appendChild(li);
-    });
+    }
 }
 
 // --- Tablas de multiplicar ---
@@ -172,4 +174,24 @@ document.addEventListener("DOMContentLoaded", () => {
         tamanoInput.value = "";
     });
 });
+
 /*Calculadora */
+const display = document.getElementById('display');
+
+function add(value) {
+    if (display) display.value += value;
+}
+
+function clearDisplay() {
+    if (display) display.value = '';
+}
+
+function calculate() {
+    if (display) {
+        try {
+            display.value = eval(display.value);
+        } catch {
+            display.value = 'Error 😕';
+        }
+    }
+}

@@ -16,33 +16,40 @@
             <a href="./about_us.html" class="nav-link">About Us</a>
         </nav>
     </header>
+
     <main>
-        <div class="calculator">
-        <input type="text" id="display" readonly />
-        <div class="buttons">
-            <button onclick="add('7')">7</button>
-            <button onclick="add('8')">8</button>
-            <button onclick="add('9')">9</button>
-            <button class="operator" onclick="add('+')">+</button>
-            <button onclick="add('4')">4</button>
-            <button onclick="add('5')">5</button>
-            <button onclick="add('6')">6</button>
-            <button class="operator" onclick="add('-')">-</button>
-            <button onclick="add('1')">1</button>
-            <button onclick="add('2')">2</button>
-            <button onclick="add('3')">3</button>
-            <button class="operator" onclick="add('*')">×</button>
-            <button onclick="add('0')">0</button>
-            <button onclick="add('.')">.</button>
-            <button class="equal" onclick="calculate()">=</button>
-            <button class="operator" onclick="add('/')">÷</button>
-            <button class="clear" onclick="clearDisplay()">Limpiar</button>
+        <div class = "Calculator">
+            <h2 class="titulo-calculadora">Calculadora</h2>
+            <input type="text" id="display" readonly />
+            <div class="botones-calculadora">
+                <button class="boton-cal" onclick="add('7')">7</button>
+                <button class="boton-cal" onclick="add('8')">8</button>
+                <button class="boton-cal" onclick="add('9')">9</button>
+                <button class="operator" onclick="add('+')">+</button>
+
+                <button class="boton-cal" onclick="add('4')">4</button>
+                <button class="boton-cal" onclick="add('5')">5</button>
+                <button class="boton-cal" onclick="add('6')">6</button>
+                <button class="operator" onclick="add('-')">-</button>
+
+                <button class="boton-cal" onclick="add('1')">1</button>
+                <button class="boton-cal" onclick="add('2')">2</button>
+                <button class="boton-cal" onclick="add('3')">3</button>
+                <button class="operator" onclick="add('*')">×</button>
+
+                <button class="boton-cal" onclick="add('0')">0</button>
+                <button class="boton-cal" onclick="add('.')">.</button>
+                <button class="equal" onclick="calculate()">=</button>
+                <button class="operator" onclick="add('/')">÷</button>
+
+                <button class="clear" onclick="clearDisplay()">Limpiar</button>
             </div>
         </div>
     </main>
+
     <footer>
         <p class="footer-texto">© 2025 Paulina & Antonio. Todos los derechos reservados.</p>
     </footer>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
