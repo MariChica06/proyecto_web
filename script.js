@@ -3,9 +3,6 @@ const agregarBtn = document.getElementById("agregarBtn");
 const nombreInput = document.getElementById("nombreInput");
 const listaNombres = document.getElementById("listaNombres");
 const mensaje = document.getElementById("mensaje");
-const generarGruposBtn = document.getElementById('generarGruposBtn');
-const tamanoGrupo = document.getElementById('tamanoGrupo');
-const gruposResultado = document.getElementById('gruposResultado');
 
 let nombres = [];
 
@@ -77,50 +74,6 @@ function mostrarNombres() {
     });
 }
 
-// --- Generar grupos aleatorios ---
-generarGruposBtn.addEventListener('click', () => {
-    const tamano = parseInt(tamanoGrupo.value);
-    if (nombres.length < tamano) {
-        gruposResultado.innerHTML = '<p style="color:red;">No hay suficientes nombres para formar un grupo.</p>';
-        return;
-    }
-    // Mezclar nombres aleatoriamente
-    const mezclados = [...nombres].sort(() => Math.random() - 0.5);
-    const grupos = [];
-    for (let i = 0; i < mezclados.length; i += tamano) {
-        grupos.push(mezclados.slice(i, i + tamano));
-    }
-    mostrarGrupos(grupos);
-});
-
-function mostrarGrupos(grupos) {
-    gruposResultado.innerHTML = '';
-    grupos.forEach((grupo, idx) => {
-        const div = document.createElement('div');
-        div.innerHTML = `<strong>Grupo ${idx + 1}:</strong> ${grupo.join(', ')}`;
-        gruposResultado.appendChild(div);
-    });
-}
-
-// --- Calculadora ---
-const display = document.getElementById('display');
-
-function add(value) {
-    display.value += value;
-}
-
-function clearDisplay() {
-    display.value = '';
-}
-
-function calculate() {
-    try {
-        display.value = eval(display.value);
-    } catch {
-        display.value = 'Error 😕';
-    }
-}
-
 // --- Tablas de multiplicar ---
 function generarTabla() {
     const numero = parseInt(document.getElementById('numero').value);
@@ -141,3 +94,6 @@ function limpiar() {
     document.getElementById('numero').value = '';
     document.getElementById('result').innerHTML = '';
 }
+// Generar grupos 
+
+/*Calculadora */

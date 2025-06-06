@@ -7,19 +7,32 @@
     <link rel="stylesheet" href="./Style.css">
     <link rel="website icon" type="png" href="./imagenes/Individual.png">
     <style>
-    main {
+main {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #bcb9c2;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 600px;
+  height: auto;
 }
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+} 
+
 
 main h1, main h2 {
   color: #333;
+  font-size: 20px;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main input[type="text"],
@@ -34,16 +47,15 @@ main input[type="number"] {
 main button {
   padding: 10px 15px;
   margin: 5px;
-  background-color: #007bff;
+  background-color: #7d8b9b;
   border: none;
   color: white;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 main button:hover {
-  background-color: #0056b3;
+  background-color: #77889b;
 }
 
 main .nombre-item {
@@ -84,7 +96,8 @@ main .grupo {
         </nav>
     </header>
     <main>
-        <div class="contenedor">
+        <div class="grupo-contenedor">
+          <div class="contenedor">
         <h1>Generador de Grupos Aleatorios</h1>
 
         <input type="text" id="nombreInput" placeholder="Escribe un nombre" />
@@ -97,6 +110,7 @@ main .grupo {
 
         <h2>Grupos:</h2>
         <div id="gruposResultado"></div>
+        </div>
     </div>
     </main>
     <script>
