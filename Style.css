@@ -288,7 +288,6 @@ footer{
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    transition: 
 }
 
 .editar:hover {
@@ -441,3 +440,5 @@ button {
     object-fit: cover;
     margin-bottom: 1rem;
 }
+
+/* estilo de Grupos */

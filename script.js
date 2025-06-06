@@ -95,5 +95,81 @@ function limpiar() {
     document.getElementById('result').innerHTML = '';
 }
 // Generar grupos 
+document.addEventListener("DOMContentLoaded", () => {
+    const inputIntegrante = document.getElementById("nombreGruposInput");
+    const btnAgregarIntegrante = document.getElementById("btnAgregarIntegrante");
+    const nombresLista = document.getElementById("nombresLista");
+    const tamanoInput = document.getElementById("tamanoGrupo");
+    const generarBtn = document.getElementById("generarGruposBtn");
+    const limpiarBtn = document.getElementById("limpiarGrupoBtn");
+    const gruposResultado = document.getElementById("gruposResultado");
 
+    let integrantes = [];
+
+    // Agregar integrante a la lista
+    btnAgregarIntegrante.addEventListener("click", () => {
+        const nombre = inputIntegrante.value.trim();
+        if (nombre !== "") {
+            integrantes.push(nombre);
+            inputIntegrante.value = "";
+            mostrarIntegrantes();
+        }
+    });
+
+    // Mostrar la lista de integrantes
+    function mostrarIntegrantes() {
+        nombresLista.innerHTML = integrantes.map(n => `<li>${n}</li>`).join("");
+    }
+
+    // Generar grupos aleatorios según el tamaño indicado
+    generarBtn.addEventListener("click", () => {
+        const tamano = parseInt(tamanoInput.value);
+        if (isNaN(tamano) || tamano <= 0) {
+            alert("Ingresa un tamaño de grupo válido");
+            return;
+        }
+
+        if (integrantes.length === 0) {
+            alert("No hay integrantes para dividir en grupos");
+            return;
+        }
+
+        const grupos = crearGruposAleatorios(integrantes, tamano);
+        mostrarGrupos(grupos);
+    });
+
+    // Función para crear los grupos
+    function crearGruposAleatorios(lista, tamanoGrupo) {
+        const copia = [...lista];
+        copia.sort(() => Math.random() - 0.5);
+
+        const grupos = [];
+        while (copia.length > 0) {
+            grupos.push(copia.splice(0, tamanoGrupo));
+        }
+
+        return grupos;
+    }
+
+    // Mostrar los grupos en pantalla
+    function mostrarGrupos(grupos) {
+        gruposResultado.innerHTML = grupos.map((grupo, i) => `
+            <div>
+                <strong>Grupo ${i + 1}</strong>
+                <ul>
+                    ${grupo.map(nombre => `<li>${nombre}</li>`).join("")}
+                </ul>
+            </div>
+        `).join("");
+    }
+
+    // Limpiar todo
+    limpiarBtn.addEventListener("click", () => {
+        integrantes = [];
+        nombresLista.innerHTML = "";
+        gruposResultado.innerHTML = "";
+        inputIntegrante.value = "";
+        tamanoInput.value = "";
+    });
+});
 /*Calculadora */
