@@ -379,11 +379,12 @@ footer{
 
 /* Estilos para bout us */
 
+
 .perfil {
     background-color: #ffffff;
     border-radius: 16px;
     padding: 2rem;
-    margin: 1rem auto;
+    margin: 0.9rem;
     max-width: 600px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     text-align: center;
